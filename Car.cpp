@@ -31,6 +31,13 @@ void Car::printStatus() const {
               << " | GPS: (" << latitude << ", " << longitude << ")\n";
 }
 
+void Car::sendData() {
+    std::cout << "{ \"speed\": " << speed 
+              << ", \"fuel\": " << fuel 
+              << ", \"gps\": [" << latitude << ", " << longitude << "] }\n";
+}
+
+
 bool Car::isValid() const {
     return (speed >= 0 && speed <= 200 && fuel >= 0);
 }
